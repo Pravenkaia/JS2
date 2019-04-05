@@ -1,0 +1,19 @@
+body {
+    font-size: 14px;
+    font-size: 1.4rem;
+} 
+.goods-item {
+    max-width: 18rem;
+    padding: 1rem;
+}
+.blockquote{
+    font-style: italic;
+    
+}
+.lesson {
+    margin: 1rem;
+    padding: 1rem;
+}
+.lesson div {
+   margin: 1ю5rem; 
+}
