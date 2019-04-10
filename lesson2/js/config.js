@@ -1,0 +1,1 @@
+const GOODS_IMG = 'images/no_photo.png';
