@@ -3,13 +3,16 @@ class Hamburger {
 
     // можно было обойтись и без параметров в конструкторе
     // просто попытка сделать универсальнее...
-    constructor(size = 'big', idPrice = 'price', idCalorie = 'calorie') {
+    constructor(size = 'big', stuff = 'cheese', idPrice = 'price', idCalorie = 'calorie') {
 
         //// обязательное значение, значение по умолчанию
         this.sizeDefault = size;
 
+        //// обязательное значение, значение по умолчанию
+        this.stuffingDefault = [stuff];
+
         this.size = size;
-        this.stuffing = [];
+        this.stuffing = [stuff];
 
         // id  куда вставлять суммарную цену
         this.idPrice = idPrice;
@@ -17,8 +20,9 @@ class Hamburger {
         this.idCalorie = idCalorie;
 
         //сразу выводим цену и калории для значений по умолчанию
-        this.render(idPrice, HAMBURGER_PRICE[this.size].price);
-        this.render(idCalorie, HAMBURGER_PRICE[this.size].cal);
+        //this.render(idPrice, HAMBURGER_PRICE[this.size].price);
+        //this.render(idCalorie, HAMBURGER_PRICE[this.size].cal);
+        this.calc();
 
     }
 
@@ -44,11 +48,17 @@ class Hamburger {
 
     getSum() {
         var sumSum = 0;
+        var filling = 0;
         sumSum += HAMBURGER_PRICE[this.size].price;
 
         this.stuffing.forEach((item) => {
             sumSum += HAMBURGER_PRICE[item].price;
+            if (HAMBURGER_PRICE[item].filling) {
+                filling++;
+            }
         });
+        console.log('Начинок: ' + filling);
+        if (filling == 0) alert('Добавьте начинку!');
         return sumSum;
     }
 
@@ -63,7 +73,7 @@ class Hamburger {
     }
 
     calc() {
-        var sum = this.getSum();
+        //var sum = this.getSum();
         //вызываем метод render
         this.render(this.idPrice, this.getSum());
         this.render(this.idCalorie, this.getCalorie());
@@ -76,7 +86,7 @@ class Hamburger {
 
     reset() {
         this.size = this.sizeDefault;
-        this.stuffing = [];
+        this.stuffing = this.stuffingDefault;
     }
 
     resetCalc() {
@@ -86,6 +96,3 @@ class Hamburger {
 
 
 }
-
-
-

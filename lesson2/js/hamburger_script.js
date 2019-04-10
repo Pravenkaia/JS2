@@ -1,7 +1,7 @@
 'use strict';
 // можно было обойтись и без параметров в конструкторе
 // просто попытка сделать универсальнее...
-var myHumburger = new Hamburger('big', 'price', 'calorie');
+var myHumburger = new Hamburger('big', 'cheese', 'price', 'calorie');
 
 // слушатель кликов по форме
 document.getElementById('form').addEventListener('change', (e) => {
