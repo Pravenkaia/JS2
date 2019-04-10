@@ -57,7 +57,7 @@ class Hamburger {
                 filling++;
             }
         });
-        console.log('Начинок: ' + filling);
+        console.log(`Начинок:  + ${filling}`);
         if (filling == 0) alert('Добавьте начинку!');
         return sumSum;
     }

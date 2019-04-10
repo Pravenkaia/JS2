@@ -26,13 +26,14 @@ document.getElementById('form').addEventListener('change', (e) => {
 
     myHumburger.calc();
     console.log(checkedYes);
-    e.preventDefault();
+
 });
 
 
 // слушатель кнопки "осчистить"
 document.getElementById('form').addEventListener('submit', (e) => {
+    e = e || event;
     myHumburger.resetCalc();
     document.getElementById('form').reset();
-    e.preventDefault();
+
 });
