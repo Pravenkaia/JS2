@@ -100,7 +100,7 @@ class Cart {
 
     }
 
-    
+
 
 
     // увеличить кол-во товара
@@ -117,8 +117,8 @@ class Cart {
                 this.calcAmount();
 
                 // выполняем передаем данные  ТАК?????
-                // makePOSTRequest(`${API_URL}/addToBasket.json`, getCartToJson());
-                // сервер их обрабатывает, возвращает новый файл getBasket.json
+                // makePOSTRequest(`${API_URL}/addToBasket.json`, this.getCartToJson())
+                // сервер их обрабатывает, возвращает новый файл getBasket.json и к нему снова обратиться...
 
                 // заглушка действия на сервере
                 makeGETRequest(`${API_URL}/addToBasket.json`)
@@ -140,9 +140,9 @@ class Cart {
             }
         }.bind(this));
     };
-    
-    
-    
+
+
+
     // удалить товар
     delGood(id) {
         this.goodsList.forEach(function (item, i) {
@@ -153,10 +153,10 @@ class Cart {
 
                 this.calcCountGoods();
                 this.calcAmount();
-                
+
                 // выполняем передаем данные  ТАК?????
-                // makePOSTRequest(`${API_URL}/addToBasket.json`, getCartToJson());
-                // сервер их обрабатывает, возвращает новый файл getBasket.json
+                // makePOSTRequest(`${API_URL}/addToBasket.json`, this.getCartToJson())
+                // сервер их обрабатывает, возвращает новый файл getBasket.json и к нему снова обратиться...
 
                 // заглушка действия на сервере
                 makeGETRequest(`${API_URL}/deleteFromBasket.json`)
@@ -166,7 +166,7 @@ class Cart {
                             console.log('del result.result = ' + result.result);
                         }
                     })
-                
+
                     //.then(() => this.fetchGoods()) // в реальности снова загружаем обновленную корзину
                     .then(() => this.renderAmount())
                     .then(() => this.renderList())
@@ -179,8 +179,8 @@ class Cart {
         }.bind(this));
     };
 
-    
-    
+
+
     // изменить кол-во товара
     changeAmount(id, newAmout) {};
 

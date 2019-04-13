@@ -37,7 +37,7 @@ const makeGETRequest = (url) => {
 
 }
 
-const makePOSTRequest = (url) => {
+const makePOSTRequest = (url,data) => {
 
 
     let request;
@@ -52,6 +52,8 @@ const makePOSTRequest = (url) => {
     return new Promise(function (resolve, reject) {
 
         request.open('POST', url, true);
+        request.setRequestHeader('accept', 'application/json');
+        request.send(data);
 
         request.onreadystatechange = function () {
 
@@ -59,7 +61,7 @@ const makePOSTRequest = (url) => {
 
                 // от 200 до 300 полезная информация, не ошибка
                 (request.status >= 200 && request.status < 300) ?
-                    resolve(request.send(data)):
+                    resolve(request.statusText):
                     reject(`Ошибка! выкидываю reject() POST: ${request.status}`);
 
             }
