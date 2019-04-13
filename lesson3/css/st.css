@@ -1,0 +1,32 @@
+body {
+    font-size: 14px;
+    font-size: 1.4rem;
+} 
+.goods-item {
+    max-width: 18rem;
+    padding: 1rem;
+}
+.blockquote{
+    font-style: italic;
+    
+}
+.lesson {
+    margin: 1rem;
+    padding: 1rem;
+}
+.lesson div {
+   margin: 1.5rem; 
+}
+
+.form {
+    padding-left:5rem;
+}
+
+.img-in-cart {
+    width: 2rem;
+    border: thin solid #ccc;
+}
+.disabled-button {
+    pointer-events: none;
+    opacity: 0.4;
+}
