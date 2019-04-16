@@ -8,7 +8,8 @@ js
     functions.js - библиотека
     // goods.js - уже не нужный, свой объект товаров const GOODS
     // goodsInCart.js - уже не нужный, свой объект товаров в корзине
-    GoodsItem.js - сущность СПИСОК ТОВАРОВ
-    
+    GoodsItem.js - сущность ЭЛЕМЕНТ СПИСКА ТОВАРОВ
+    GoodsList.js - сущность СПИСОК ТОВАРОВ
+    script.js - общий скрипт
     
     
