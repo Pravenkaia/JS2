@@ -29,9 +29,9 @@ const makeGETRequest = (url) => {
         let request;
 
         if (variant == 2) {
-            setTimeout(() => reject(new Error('Превышение времени ожидания сервера!')), 3000);
+            setTimeout(() => reject(alert("new Error('Превышение времени ожидания сервера!')")), 3000);
         } else if (variant == 3) {
-            reject('Файл не найден!');
+            reject(alert('Файл не найден!'));
         } else {
 
             //создаем новый объект кроссбраузерно
