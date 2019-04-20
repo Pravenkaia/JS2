@@ -1,0 +1,80 @@
+body {
+    font-size: 12px;
+    font-size: 1.2rem;
+    /* font-family: Arial;*/
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+.goods-item {
+    max-width: 18rem;
+    padding: 1rem;
+}
+
+/* форма действий в корзине */
+.form {
+    padding-left: 5rem;
+}
+
+/* картинка тоавра в корзине */
+.img-in-cart {
+    width: 2rem;
+    border: thin solid #ccc;
+}
+
+/* неактиная кнопка (когда товар остается 1, кнопка "-" становится некликабельной */
+.disabled-button {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.search-input {
+    width: 8rem;
+}
+
+
+/* форма контактов юзера */
+.div-user-form div {
+    padding: 1rem;
+}
+
+
+.div-user-form input {
+    width: 96%;
+    padding: 1%;
+    border: thin solid #ccc;
+    border-radius: 0.5rem;
+}
+
+.div-user-form input[type="submit"] {
+    width: 98%;
+    background-color: #888;
+    color: #fff;
+}
+
+.div-user-form label {
+    padding-bottom: 1rem;
+}
+.div-user-form legend {
+    color: #555;
+    text-transform: uppercase;
+    padding: 1%;
+}
+
+.div-user-form fieldset {
+    margin: 1%;
+    padding: 1%;
+    border: thin solid #ccc;
+    border-radius: 1rem;
+}
+
+.is-error {
+    border-color: red;
+}
+
+.is-true {
+    border-color: green;
+}
