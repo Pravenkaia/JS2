@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>eShop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/st.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div id="app">
+        <header class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <a class="navbar-brand" href="#">Brand</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+                <!--Поиск по списку товаров-->
+                <form id="search-form" @submit.prevent="FilterGoods">
+                    <div class="form-row search">
+                        <div class="col-1">
+                            <button id="search-button" class="search-button btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="Поиск по списку товаров"><i class="fas fa-search" aria-label="Поиск по списку товаров"></i></button>
+                        </div>
+                        <div class="col-sm-6">
+                          
+                           <!--ПОИСК input-->
+                            <search-input v-bind:value="searchLine" v-on:input="searchLine = $event"></search-input>
+                            
+                            
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <!--Кнопка корзины товаров-->
+                <button @click="showCart = !showCart" class="cart-button btn btn-default btn-lg " type="button" data-toggle="modal" data-target=".modal_cart" id="open-cart-window"><i class="fas fa-cart-arrow-down"></i>&nbsp;<span id="cart-item-number">{{ cartQuantity }}</span>
+                </button>
+            </nav>
+
+
+
+        </header>
+
+
+
+
+
+        <main>
+            <!--ЗАГРУЗКА ТОВАРОВ-->
+            <products :products="filteredProducts" :img="imgCatalog" :error="errorAjax" @add-product="addProduct"></products>
+        </main>
+
+
+
+        <div v-show="showCart" id="cart-window" class="modal-window">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ваши товары в корзине</h5>
+                        <button @click="showCart = !showCart" type="button" class="close close-cart-window" data-dismiss="modal" id="close-cart-window">
+                            <i class="fas fa-times close-cart-window"></i>
+                        </button>
+                    </div>
+
+                    <!--ЗАГРУЗКА КОРЗИНЫ-->
+                    <cart :cartitems="cartProducts" :img="imgCart" :error="errorAjax" @add-product="addProduct" @minus-product="minusProduct" @del-product="delProduct"></cart>
+                    <!--ЗАГРУЗКА КОРЗИНЫ--конец-->
+
+                    <div class="modal-footer">
+                        <button @click="showCart = !showCart" type="button" class="btn btn-secondary close-cart-window" data-dismiss="modal">Закрыть</button>
+                        <button type="button" class="btn btn-primary">Оформить покупку</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!-- /div index="app" -->
+
+    <!--СКРИПТЫ-->
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/ErrorComponent.js"></script>
+    <script src="js/SearchComponent.js"></script>
+    <script src="js/ProdComponents.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/script.js"></script>
+    <!--ОСНОВНОЙ СКРИПТ-->
+
+
+</body></html>
+
+<!--
+<br>
+https://fontawesome.com/icons/
+<br>
+https://github.com/GeekBrainsTutorial/online-store-api
+-->
