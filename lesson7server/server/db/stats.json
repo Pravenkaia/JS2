@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "date": "May 4th 2019, 2:05:15 pm",
+        "action": "plus",
+        "id_product": 124,
+        "product_name": "Keyboard"
+    },
+    {
+        "id": 1,
+        "date": "May 4th 2019, 2:05:21 pm",
+        "action": "add",
+        "id_product": 456,
+        "product_name": "Мышка"
+    },
+    {
+        "id": 2,
+        "date": "May 4th 2019, 2:05:24 pm",
+        "action": "add",
+        "id_product": 224,
+        "product_name": "USB-Camera"
+    },
+    {
+        "id": 3,
+        "date": "May 4th 2019, 2:05:29 pm",
+        "action": "del",
+        "id_product": 124,
+        "product_name": "Keyboard"
+    },
+    {
+        "id": 4,
+        "date": "May 4th 2019, 2:05:31 pm",
+        "action": "minus",
+        "id_product": 123,
+        "product_name": "Ноутбук"
+    }
+]
