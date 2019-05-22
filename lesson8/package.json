@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack --p",
+    "watch": "webpack --watch --watch-poll",
     "test" : "jasmine"
   },
   "keywords": [],

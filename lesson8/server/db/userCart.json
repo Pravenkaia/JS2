@@ -15,12 +15,6 @@
             "price": 3000
         },
         {
-            "quantity": 2,
-            "id_product": 124,
-            "product_name": "Keyboard",
-            "price": 1600
-        },
-        {
             "quantity": 0,
             "id_product": 123,
             "product_name": "Ноутбук",

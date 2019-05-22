@@ -264,5 +264,26 @@
         "action": "minus",
         "id_product": 123,
         "product_name": "Ноутбук"
+    },
+    {
+        "id": 38,
+        "date": "May 22nd 2019, 12:15:28 am",
+        "action": "plus",
+        "id_product": 124,
+        "product_name": "Keyboard"
+    },
+    {
+        "id": 39,
+        "date": "May 22nd 2019, 12:15:30 am",
+        "action": "minus",
+        "id_product": 124,
+        "product_name": "Keyboard"
+    },
+    {
+        "id": 40,
+        "date": "May 22nd 2019, 12:15:31 am",
+        "action": "del",
+        "id_product": 124,
+        "product_name": "Keyboard"
     }
 ]
