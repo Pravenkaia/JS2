@@ -4,8 +4,11 @@ const fs = require ('fs');
 
 const router = express.Router ();
 
+// путь к файлу json
+const cartJsonPath = 'dist/server/db/userCart.json';
+
 router.get ('/', (req, res) => {
-    fs.readFile ('server/db/userCart.json', 'utf-8', (err, data) => {
+    fs.readFile (cartJsonPath, 'utf-8', (err, data) => {
         if (err) {
             res.sendStatus (404, JSON.stringify({result: 0, text: err}));
         } else {
@@ -15,17 +18,17 @@ router.get ('/', (req, res) => {
 });
 
 router.post ('/', (req, res) => {
-    handler (req, res, 'add', 'server/db/userCart.json');
+    handler (req, res, 'add', cartJsonPath);
 });
 
 router.put ('/:id', (req, res) => {
     //console.log('req.body.action: ' + req.body.action);
     //console.dir(req.body);
-    handler (req, res, req.body.action, 'server/db/userCart.json');
+    handler (req, res, req.body.action, cartJsonPath);
 });
 
 router.delete ('/', (req, res) => {
-    handler (req, res, 'del', 'server/db/userCart.json');
+    handler (req, res, 'del', cartJsonPath);
 });
 
 
