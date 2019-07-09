@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RegExp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            font-size: 12px;
+            font-size: 1.2rem;
+            font-family: Arial;
+        }
+        main {
+            width: 90%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <main>
+        <br><br>
+
+        <div id="text">
+            <p>'They think it is a good idea,' said John.<br>
+                'I don't agree,' I replied.</p>
+
+            <p>Но какие зн'аки препинания' стоит ставить в том случае, когда пря'мая речь начинается, затем прерывается, а после этого снова продолжается? Обратите внимание на пример.<br>
+                'I love you,' he told her. 'I love you very much.'</p>
+
+            <p>'Итак, все вроде' понятно. 'Ну а если что-то' не ясно, то вы всегда можете обратиться к следующим примерам и вспомнить, куда же следу'ет ставить знаки пр'епинания. Удачи!</p>
+
+            <p>Шпаргалка'''''<br>
+                He said, 'I love cats.'<br>
+                He asked, 'Do you love cats?'<br>
+                'I don't love cats!' he shouted.<br>
+                'I don't love cats,' he said.<br>
+                'I don't love cats'! he said.<br>
+                'I don't love cats'... he said.<br>
+                'I don't love cats...' he said.<br>
+                'I don't love cats', he said. 'And I love you.'</p>
+
+
+        </div>
+
+        <div>
+            <button style="padding:1rem 0; width:100%">Заменить кавычки (')</button>
+        </div>
+
+        <div style="color:green">
+            <h3> 4 этапа изврщений</h3>
+            <table>
+                <tr>
+                    <td>str.replace(/'([^']+)'/gi, '"$1"')</td> 
+                    <td>// выбираем группу любых (кроме '), окруженную ' '</td>
+                </tr>
+                <tr>
+                    <td>.replace(/(\S)"(\S)/g, "$1'$2")</td><td> // заменяем двойные кавычки внутри групп непробелов ( \b не годится, т.к. у нас не латиница!)</td>
+                </tr>
+                <tr>
+                    <td>.replace(/'([,|!|?|.\3])/g, '"$1') </td><td>// упс! заменить ' перед знаком препинания (предыдущий replace накосячил)</td>
+                </tr>
+                <tr>
+                    <td>.replace(/('+)'('+)/g, "'");</td> <td>// заменям многократные одинарные кавычки</td>
+                </tr>
+            </table>
+            <br><br>
+        </div>
+
+    </main>
+    
+    
+    <script>
+        // функция заменяет одинарные кавычки на двойные
+        function replaceQuotation(str) {
+            return str.replace(/'([^']+)'/gi, '"$1"') // выбираем группу, окруженную '
+                .replace(/(\S)"(\S)/g, "$1'$2") // заменяем двойные кавычки внутри групп непробелов ( \b не годится, т.к. у нас не латиница!)
+                .replace(/'([,|!|?|.\3])/g, '"$1') // упс! заменить ' перед знаком препинания (предыдущий replace накосячил) 
+                .replace(/('+)'('+)/g, "'"); // заменям многократные одинарные кавычки
+
+
+            // !!!!! 
+            // replace(/\b"\b/gi, "'") сработает только для латиницы!!!
+            // \b граница слова только для латиницы!!!
+
+        }
+
+
+        // ловим клик по единственному тегу button
+        document.getElementsByTagName('button')[0].addEventListener('click', (e) => {
+            // работаем с содержимым div с id="text"
+            let divText = document.getElementById('text');
+            let newText = replaceQuotation(divText.innerHTML);
+            
+            divText.innerHTML = newText;
+        });
+    </script>
+    
+    
+</body></html>
