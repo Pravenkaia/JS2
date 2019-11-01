@@ -9,6 +9,7 @@ const actions = {
     del: cart.del
 };
 
+const statJsonPath = 'dist/server/db/stats.json';
 let handler = (request, response, action, file) => {
     fs.readFile (file, 'utf-8', (err, data) => {
         if (err) {
@@ -21,7 +22,7 @@ let handler = (request, response, action, file) => {
                     response.sendStatus(404, JSON.stringify({result: 0, text: err}));
                 } else {
                     // записываем log в "БД"
-                    stats('server/db/stats.json', action, request.body.product);
+                    stats(statJsonPath, action, request.body.product);
                     response.send({result: 1, text: 'Success'})
                 }
             })

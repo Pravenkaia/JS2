@@ -7,6 +7,12 @@
             "id_product": 129,
             "product_name": "Notebook",
             "price": 160000
+        },
+        {
+            "quantity": 1,
+            "id_product": 458,
+            "product_name": "Display",
+            "price": 12000
         }
     ]
 }

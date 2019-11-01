@@ -180,5 +180,12 @@
         "action": "del",
         "id_product": 458,
         "product_name": "Display"
+    },
+    {
+        "id": 26,
+        "date": "May 22nd 2019, 7:26:58 pm",
+        "action": "add",
+        "id_product": 458,
+        "product_name": "Display"
     }
 ]
