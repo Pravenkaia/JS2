@@ -20,7 +20,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "express": "^4.17.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "terser-webpack-plugin": "^1.2.4",
     "whatwg-fetch": "^3.0.0"
   },
